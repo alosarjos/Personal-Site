@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets";
+
+const { title, body, imgSrc, pubDate, url } = Astro.props;
+---
+
+<a href={url}>
+    <div class="h-48 flex flex-row p-4 gap-8 rounded-md card-shadow transition duration-300">
+        <Image
+            class="w-1/2 object-contain"
+            height={200}
+            width={200}
+            alt={title}
+            src={imgSrc}
+        />
+        <div class="flex flex-row w-3/5 justify-between overflow-hidden">
+            <div class="flex flex-col gap-2 self-center">
+                <span class="text-3xl font-semibold">{title}</span>
+                <p class="hidden md:inline text-xl overflow-hidden">{body}</p>
+            </div>
+            <span class="hidden md:inline text-lg font-semibold">{pubDate?.toLocaleDateString()}</span>
+        </div>
+    </div>
+</a>
+
+<style>
+    .card-shadow {
+        border: 2px solid rgba(var(--accent), 0.6);
+        box-shadow: 6px 6px rgba(var(--accent), 0.6);
+    }
+    .card-shadow:hover {
+        border: 2px solid rgb(var(--accent));
+        box-shadow: 6px 6px rgb(var(--accent));
+    }
+</style>

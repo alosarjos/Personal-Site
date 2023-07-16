@@ -1,0 +1,90 @@
+---
+import { Image } from 'astro:assets'
+
+import avatar from "../assets/images/avatar.jpg";
+import twitterLogo from "../assets/images/twitter.svg";
+import sourceHutLogo from "../assets/images/sourcehut.svg";
+import gitlabLogo from "../assets/images/gitlab.svg"
+import githubLogo from "../assets/images/github.svg";
+
+interface ImageLink {
+    image: ImageMetadata;
+    url: string;
+    alt: string;
+}
+
+const imageLinks: ImageLink[] = [
+    {
+        image: twitterLogo,
+        url: "https://twitter.com/alosarjos",
+        alt: "twitter",
+    },
+    {
+        image: sourceHutLogo,
+        url: "https://sr.ht/~alosarjos/",
+        alt: "sourcehut",
+    },
+    {
+        image: gitlabLogo,
+        url: "https://gitlab.com/alosarjos",
+        alt: "gitlab",
+    },
+    {
+        image: githubLogo,
+        url: "https://github.com/alosarjos",
+        alt: "github",
+    },
+];
+---
+
+<header class="hidden md:inline flex-initial w-full">
+    <div class="mt-8 mx-4">
+        <div
+        id="header" class="flex flex-row items-center justify-between">
+        <a class="hover:underline underline-offset-8" href="/">
+            <div id="user-info" class="flex items-center gap-2">
+                <Image 
+                    class="rounded-full shadow-sm shadow-black"
+                    height={60}
+                    width={60}
+                    alt="Personal Avatar"
+                    src={avatar}
+                />
+                <span class="text-2xl font-semibold">alosarjos</span>
+            </div>
+        </a>
+
+        <div id="site-links" class="flex flex-initial w-1/4 flex-row justify-between w">
+            <a href="/blog"
+                ><span
+                    class="text-2xl font-semibold hover:underline underline-offset-8"
+                    >Blog</span
+                ></a
+            >
+            <a href="/projects"
+                ><span
+                    class="text-2xl font-semibold hover:underline underline-offset-8"
+                    >Projects</span
+                ></a
+            >
+        </div>
+
+        <div id="user-links" class="flex gap-6">
+            {
+                imageLinks.map((imageLink) => (
+                    <a href={imageLink.url}>
+                        <Image
+                            class="transition duration-300 hover:opacity-30"
+                            src={imageLink.image}
+                            width={50}
+                            height={50}
+                            alt={imageLink.alt}
+                        />
+                    </a>
+                ))
+            }
+        </div>
+    </div>
+    </div>
+    
+</header>

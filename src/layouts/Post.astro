@@ -1,0 +1,31 @@
+---
+import { Image } from "astro:assets";
+import Base from "./Base.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<Base title={frontmatter.title}>
+    <section class="mt-10 flex flex-col items-center">
+        <h1 class="text-6xl font-bold text-gradient ">
+            {frontmatter.title}
+        </h1>
+        <article class="mt-2 prose prose-xl dark:prose-invert">
+            <div class="text-center">
+                <span class="text-xl font-bold">
+                    {new Date(frontmatter.pubDate).toDateString()}
+                </span>
+            </div>
+            <div class="mt-8">
+                <slot  />
+            </div>
+        </article>
+        <Image
+            width={500}
+            height={500}
+            alt={frontmatter.image.alt}
+            class="mt-20 rounded-lg"
+            src={frontmatter.image.url}
+        />
+    </section>
+</Base>

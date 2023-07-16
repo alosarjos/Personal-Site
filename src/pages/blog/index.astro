@@ -1,0 +1,30 @@
+---
+import Base from "../../layouts/Base.astro";
+import PostCard from "../../components/cards/Post.astro";
+
+const posts = await Astro.glob("./posts/*.md");
+
+posts.sort(
+    (a, b) =>
+        Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate)
+);
+---
+
+<Base title="Alosarjos Blog">
+    <div class="text-center mt-8">
+        <span class="text-6xl font-bold text-gradient">Latest blog posts</span>
+    </div>
+    <div class="mt-16 flex flex-col gap-6">
+        {
+            posts.map((post) => (
+                <PostCard
+                    title={post.frontmatter.title}
+                    body={post.frontmatter.description}
+                    imgSrc={post.frontmatter.image.url}
+                    pubDate={new Date(post.frontmatter.pubDate)}
+                    url={post.url}
+                />
+            ))
+        }
+    </div>
+</Base>
