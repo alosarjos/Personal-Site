@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets'
 
-import avatar from "../assets/images/avatar.jpg";
+import avatar from "../assets/images/avatar.png";
 import twitterLogo from "../assets/images/twitter.svg";
 import sourceHutLogo from "../assets/images/sourcehut.svg";
 import gitlabLogo from "../assets/images/gitlab.svg"
@@ -43,8 +43,7 @@ const imageLinks: ImageLink[] = [
         id="header" class="flex flex-row items-center justify-between">
         <a class="hover:underline underline-offset-8" href="/">
             <div id="user-info" class="flex items-center gap-2">
-                <Image 
-                    class="rounded-full shadow-sm shadow-black"
+                <Image
                     height={60}
                     width={60}
                     alt="Personal Avatar"
