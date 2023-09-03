@@ -10,7 +10,7 @@ const { frontmatter } = Astro.props;
         <h1 class="text-6xl font-bold text-gradient ">
             {frontmatter.title}
         </h1>
-        <article class="mt-2 prose prose-xl dark:prose-invert">
+        <article class="mt-2 prose prose-xl prose-invert">
             <div class="text-center">
                 <span class="text-xl font-bold">
                     {new Date(frontmatter.pubDate).toDateString()}
