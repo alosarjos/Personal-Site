@@ -1,4 +1,6 @@
 ---
+import { ViewTransitions } from "astro:transitions";
+
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
@@ -28,6 +30,7 @@ const { title } = Astro.props;
         <meta property="og:image" content="https://alosarjos.com/images/avatar.jpg" />
 
 		<title>{title}</title>
+		<ViewTransitions />
 	</head>
 	<body>
 		<Header />
