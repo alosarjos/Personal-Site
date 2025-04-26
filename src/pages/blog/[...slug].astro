@@ -1,0 +1,9 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+export function getStaticPaths() {
+	return [{ params: { slug: "clifford" } }];
+}
+---
+
+<BaseLayout> Hello World </BaseLayout>

@@ -1,0 +1,21 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+:root {
+	--accent: 94, 18, 237;
+	--accent-gradient: linear-gradient(
+		45deg,
+		rgb(var(--accent)),
+		#da62c4 30%,
+		white 60%
+	);
+	color-scheme: dark;
+}
+
+.text-gradient {
+	background-image: var(--accent-gradient);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-size: 400%;
+	line-height: 1.25 !important;
+}

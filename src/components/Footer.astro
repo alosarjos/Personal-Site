@@ -1,0 +1,26 @@
+---
+import AstroLogo from "../assets/images/astro-logo.svg";
+import TailwindLogo from "../assets/images/tailwind-logo.svg";
+---
+
+<footer class="w-full mt-auto bottom-0">
+  <div
+    id="footer-content"
+    class="h-20 text-sm sm:text-lg mt-10 flex justify-center items-center"
+  >
+    <span>Created with</span>
+    <span class="mx-2 h-8">
+      <AstroLogo width={95} height={35} />
+    </span>
+    <span>and</span>
+    <span class="mx-2 h-5">
+      <TailwindLogo width={150} />
+    </span>
+  </div>
+</footer>
+
+<style>
+  #footer-content {
+    background-color: rgba(var(--accent), 0.6);
+  }
+</style>

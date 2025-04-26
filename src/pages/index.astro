@@ -1,0 +1,78 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Prose from "../components/Prose.astro";
+
+import LazyVimLogo from "../assets/images/lazyvim-logo.svg";
+import NeoVimLogo from "../assets/images/neovim-logo.svg";
+import GhosttyLogo from "../assets/images/ghostty-logo.svg";
+import ArchlinuxLogo from "../assets/images/archlinux-logo.svg";
+
+import personalAvatar from "../assets/images/personal_avatar.jpg";
+---
+
+<BaseLayout>
+  <div class="flex flex-col gap-14 items-center">
+    <div class="flex flex-row gap-6">
+      <Image
+        class="rounded-full shadow-sm shadow-black"
+        height={140}
+        width={140}
+        alt="Personal Avatar"
+        src={personalAvatar}
+        loading="eager"
+      />
+      <div class="flex flex-col h-full justify-between">
+        <span class="text-2xl">Hi there! 👋</span>
+        <h1 class="text-5xl font-bold">
+          I'm <span class="text-gradient">@alosarjos</span>
+        </h1>
+        <h2 class="text-3xl font-bold">Software developer and DevOps</h2>
+      </div>
+    </div>
+    <Prose>
+      <h1>Developer 🖥, DevOps 🛠 and Gamer 🎮!</h1>
+
+      <p>
+        Welcome to my personal blog! My goal with this site, is to give my
+        opinion on the stuff I work on and I learn about. I hope you find it
+        useful and interesting.
+      </p>
+
+      <p>
+        My personal goals are mainly around Rust and Zig this days since I
+        already write way too much Yaml on my job... but who nows! I'm also
+        interested on Linux, and the tooling around it. And of course as a good
+        millenial, my goal for this year is also to ditch VSCode and start using
+        Neovim serously. This whole site has been written from Neovim!
+      </p>
+
+      <p>
+        As you can see from the footer, this site has been written using Astro
+        and Tailwind. Hopefully what you will see is a fast static site with
+        zero JS even when I'm not a web developer or UI Designer.
+      </p>
+
+      <h2>Dev Tools</h2>
+
+      <div class="flex flex-col gap-6">
+        <div class="flex flex-row w-full h-24 justify-between align-middle">
+          <a href="https://archlinux.org/">
+            <ArchlinuxLogo width={300} height={100} />
+          </a>
+          <a href="https://ghostty.org/">
+            <GhosttyLogo width={300} height={100} />
+          </a>
+        </div>
+        <div class="flex flex-row w-full h-24 justify-between align-middle">
+          <a href="https://www.neovim.io/">
+            <NeoVimLogo width={300} height={100} />
+          </a>
+          <a href="https://www.lazyvim.org/">
+            <LazyVimLogo width={300} height={100} />
+          </a>
+        </div>
+      </div>
+    </Prose>
+  </div>
+</BaseLayout>
